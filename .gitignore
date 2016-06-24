@@ -1,0 +1,16 @@
+# See https://help.github.com/articles/ignoring-files for more about ignoring files.
+
+# Ignore bundler config.
+/web_ui/ruby/.bundle
+
+# Ignore the default SQLite database.
+/web_ui/ruby/db/*.sqlite3
+/web_ui/ruby/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/web_ui/ruby/log/*
+/web_ui/ruby/tmp
+
+# Ignore Spring files.
+/web_ui/ruby/spring/*.pid
+
