@@ -1,4 +1,6 @@
 class Person < ActiveRecord::Base
-  validates(:name, presence: true)
   has_many :keyword
+  has_many :person_page_rank
+
+  validates(:name, presence: true)
 end
