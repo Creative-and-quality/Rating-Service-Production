@@ -8,7 +8,7 @@ namespace Service.Entities
     public class Keyword
     {
         public int Id { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
         public Person PersonId { get; set; }
 
     }
