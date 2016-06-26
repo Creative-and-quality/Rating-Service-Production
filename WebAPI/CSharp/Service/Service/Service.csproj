@@ -128,7 +128,8 @@
     <Compile Include="Context\Repository.cs" />
     <Compile Include="Controllers\AdminApiController.cs" />
     <Compile Include="Controllers\KeywordController.cs" />
-    <Compile Include="Controllers\ValuesController1.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Entities\Keyword.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\Site.cs" />
