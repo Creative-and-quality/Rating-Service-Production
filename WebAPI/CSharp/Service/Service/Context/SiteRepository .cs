@@ -7,27 +7,27 @@ using Service.Interfaces;
 
 namespace Service.Context
 {
-    public class PersonRepository 
+    public class SiteRepository 
     {
-        private static List<Person> Items = new List<Person>();
+        private static List<Site> Items = new List<Site>();
 
 
-        public IEnumerable<Person> GetList()
+        public IEnumerable<Site> GetList()
         {
             return Items;
         }
 
-        public Person GetItem(int id)
+        public Site GetItem(int id)
         {
             return Items.FirstOrDefault(x => x.Id == id);
         }
-        public void Create(Person item)
+        public void Create(Site item)
         {
             item.Id = Items.Count;
             Items.Add(item);
         }
 
-        public void Update(Person item)
+        public void Update(Site item)
         {
             var firstOrDefault = Items.FirstOrDefault(x => x.Id == item.Id);
             if (firstOrDefault != null)
@@ -49,9 +49,9 @@ namespace Service.Context
         {
         }
 
-        static PersonRepository()
+        static SiteRepository()
         {
-            Items.Add(new Person {Id = 0, Name = "Putin"});
+            Items.Add(new Site {Id = 0, Name = "lenta.ru"});
         }
 
     }

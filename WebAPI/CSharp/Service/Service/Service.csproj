@@ -125,7 +125,9 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Context\ApiDbContext.cs" />
-    <Compile Include="Context\Repository.cs" />
+    <Compile Include="Context\SiteRepository .cs" />
+    <Compile Include="Context\PersonRepository.cs" />
+    <Compile Include="Context\KeywordRepository.cs" />
     <Compile Include="Controllers\AdminApiController.cs" />
     <Compile Include="Controllers\KeywordController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
