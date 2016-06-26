@@ -13,34 +13,31 @@ namespace Service.Controllers
     {
         public IEnumerable<Keyword> Get()
         {
-            return new KeywordRepository().Keywords;
+            return new KeywordRepository().GetList();
         }
 
         // GET api/<controller>/5
         public Keyword Get(int id)
         {
-            return new KeywordRepository().Keywords.FirstOrDefault(item => item.Id == id);
+            return new KeywordRepository().GetItem(id);
         }
 
         // POST api/<controller>
         public void Post([FromBody]Keyword value)
         {
-            new KeywordRepository().Add(value);
+            new KeywordRepository().Create(value);
         }
 
         // PUT api/<controller>/5
         public void Put(int id, [FromBody]Keyword value)
         {
-            new KeywordRepository().Save(value);
+            new KeywordRepository().Update(value);
         }
 
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
-            KeywordRepository keywordRepository = new KeywordRepository();
-            Keyword item = keywordRepository.Keywords.FirstOrDefault(g => g.Id == id);
-            if (item != null)
-                keywordRepository.Delete(item);
+            new KeywordRepository().Delete(id);
         }
 
     }
