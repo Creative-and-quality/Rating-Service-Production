@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
-    public class PersonPageRankRepository : Base.IPageRankRepository
+    public class PersonPageRankRepository : Base.IPersonPageRankRepository
     {
         private RSPDbContext db;
         public PersonPageRankRepository()

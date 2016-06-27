@@ -23,5 +23,6 @@ namespace Domain.Entities
         public DateTime LastScanDate { get; set; }
         [ForeignKey("SiteID")]
         public virtual Site Site { get; set; }
+        public virtual ICollection<PersonPageRank> PersonPageRanks { get; set; }
     }
 }

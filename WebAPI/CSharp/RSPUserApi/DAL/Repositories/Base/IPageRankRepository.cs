@@ -8,7 +8,7 @@ using Domain.Entities;
 namespace DAL.Repositories.Base
 {
     // Из-за того что в таблице PersonPageRank ключ составной - два метода - Delete и Get - должны принимать два параметра вместо одного (как в других таблицах)
-    public interface IPageRankRepository : IDisposable
+    public interface IPersonPageRankRepository : IDisposable
     {
         IEnumerable<PersonPageRank> GetList();
         PersonPageRank Get(int PageId, int PersonId);

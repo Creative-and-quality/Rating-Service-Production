@@ -15,5 +15,7 @@ namespace Domain.Entities
         public int ID { get; set; }
         [Required, MaxLength(2048), Column(TypeName = "nvarchar")]
         public string Name { get; set; }
+        public virtual ICollection<Keyword> Keywords { get; set; }
+        public virtual ICollection<PersonPageRank> PersonPageRanks { get; set; }
     }
 }

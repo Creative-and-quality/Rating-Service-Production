@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace DAL.Repositories
 {
@@ -22,7 +23,7 @@ namespace DAL.Repositories
         }
         public Site Get(int Id)
         {
-            var site = db.Sites.FirstOrDefault(s => s.ID == Id);
+            var site = db.Sites.Include(s => s.Pages).FirstOrDefault(s => s.ID == Id);
             return site;
         }
         public void Create(Site item)

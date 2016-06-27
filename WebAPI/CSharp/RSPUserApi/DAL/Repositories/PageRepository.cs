@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace DAL.Repositories
 {
@@ -17,7 +18,7 @@ namespace DAL.Repositories
         }
         public IEnumerable<Page> GetList()
         {
-            var page = db.Pages.AsEnumerable<Page>();
+            var page = db.Pages.Include(p => p.PersonPageRanks).AsEnumerable<Page>();
             return page;
         }
         public Page Get(int Id)
