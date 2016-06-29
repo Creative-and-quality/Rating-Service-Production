@@ -1,30 +1,34 @@
 package control;
 
 import model.Sites;
+
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
  * Created by d.zhuchkov on 27.06.2016.
  */
-public class SitesDao implements SqlDao<Sites> {
+public class SitesDao implements SqlDao<String> {
     @Override
-    public boolean update(Sites sql) {
+    public boolean update(String sql) {
         return false;
     }
 
     @Override
-    public boolean delete(Sites sql) {
+    public boolean delete(String sql) {
         return false;
     }
 
     @Override
-    public boolean insert(Sites sql) {
+    public boolean insert(String sql) {
         return false;
     }
 
     @Override
-    public Collection<Sites> select() {
+    public Collection<String> select() {
+        Collection<String> sites = new ArrayList<>();
+        sites.add("lenta.ru");
         System.out.println("Получили коллекцию сайтов из справочника!");
-        return null;
+        return sites;
     }
 }

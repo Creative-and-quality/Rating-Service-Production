@@ -12,9 +12,9 @@ import java.util.Map;
  */
 public class ForCrawler {
 
-     Collection<Sites> sites;
-     Collection<Persons> persons;
-    Map<Persons, Collection<KeyWords>> personKeyWords = new HashMap<>();
+    private Collection<String> sites;
+    private Collection<Persons> persons;
+    private Map<Persons, Collection<KeyWords>> personKeyWords = new HashMap<>();
 
     //создаем коллекцию MAP (ключевое слово/массив поисковых слов к ключевому)
     public  Map<Persons, Collection<KeyWords>> getPersonKeyWords() {
@@ -28,7 +28,7 @@ public class ForCrawler {
         return persons=DBFacade.getInstance().getPersonDao().select();
     }
     //получаем ссылки на сайты из справочника
-    public Collection<Sites> getSites() {
+    public Collection<String> getSites() {
         return sites = DBFacade.getInstance().getSitesDao().select();
     }
 
