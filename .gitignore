@@ -15,3 +15,9 @@
 /web_ui/ruby/spring/*.pid
 
 .idea
+*.iml
+diff.xml
+gradle.run.settings.xml
+ide.general.xml
+markdown.xml
+inspection
