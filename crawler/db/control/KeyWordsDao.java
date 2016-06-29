@@ -25,7 +25,7 @@ public class KeyWordsDao implements SqlDao<KeyWords> {
     }
 
     @Override
-    public Collection<KeyWords> select() {
+    public Collection<KeyWordsDao> select() {
         System.out.println("Получили список ключевых слов по персоне.");
         return null;
     }
