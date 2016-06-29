@@ -32,6 +32,7 @@ public class ForCrawler {
         return sites = DBFacade.getInstance().getSitesDao().select();
     }
 
+    //делаем проверку ссылки в БД
     public boolean checkURL() {
         return true;
     }
