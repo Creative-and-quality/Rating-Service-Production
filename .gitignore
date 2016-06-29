@@ -14,3 +14,4 @@
 # Ignore Spring files.
 /web_ui/ruby/spring/*.pid
 
+.idea
