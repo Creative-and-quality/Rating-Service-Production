@@ -23,7 +23,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 //        String url = args[0];
-        System.out.println("113213");
       //  String urlFromDB = "lenta.ru";
         Collection<String> urlFromDB = DBFacade.getInstance().getSitesDao().select();
 
