@@ -36,4 +36,8 @@ public class ForCrawler {
     public boolean checkURL() {
         return true;
     }
+
+    public static void main(String[] args) {
+        System.out.println("Привет");
+    }
 }
