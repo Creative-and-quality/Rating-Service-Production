@@ -14,4 +14,8 @@
 # Ignore Spring files.
 /web_ui/ruby/spring/*.pid
 
+<<<<<<< HEAD
 .idea
+=======
+.idea
+>>>>>>> refs/remotes/origin/master
