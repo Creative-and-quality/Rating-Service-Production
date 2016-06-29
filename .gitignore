@@ -28,3 +28,4 @@ inspection
 /ui.lnf.xml
 /web-browsers.xml
 /_windows/
+*.iml
