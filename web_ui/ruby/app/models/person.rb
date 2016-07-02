@@ -4,9 +4,17 @@ class Person < ActiveRecord::Base
 
   validates(:name, presence: true)
 
-  def general_rank
+  def summ_general_rank_on_site(site_id)
     rank_sum = 0
-    person_page_rank.find_each(batch_size: 100){|rank_page| sum+= rank_page.rank}
-    sum
+    general_rank_pages_on_site(site_id).each{|rank_page| rank_sum+= rank_page.rank}
+    rank_sum
+  end
+
+  private
+
+  def general_rank_pages_on_site(site_id)
+    page_ids = "SELECT id FROM pages
+    WHERE  site_id = :site_id"
+    person_page_rank.where("page_id IN (#{page_ids})", site_id: site_id)
   end
 end
