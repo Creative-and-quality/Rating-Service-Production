@@ -37,6 +37,7 @@ namespace DAL.Repositories
             {
                 keyword.Name = item.Name;
                 keyword.PersonID = item.PersonID;
+                
                 db.Entry(keyword).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
