@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using Service.Entities;
@@ -7,9 +8,9 @@ using Service.Interfaces;
 
 namespace Service.Context
 {
-    public class SiteRepository 
+    public class SiteRepository
     {
-        private static List<Site> Items = new List<Site>();
+        private static DbSet<Site> Items;
 
 
         public IEnumerable<Site> GetList()
@@ -23,22 +24,31 @@ namespace Service.Context
         }
         public void Create(Site item)
         {
-            item.Id = Items.Count;
+            item.Id = Items.Count();
             Items.Add(item);
+            Save();
         }
 
         public void Update(Site item)
         {
             var firstOrDefault = Items.FirstOrDefault(x => x.Id == item.Id);
             if (firstOrDefault != null)
-                Items[firstOrDefault.Id] = item;
+            {
+                Items.Attach(firstOrDefault);
+                Save();
+            }
+
         }
 
         public void Delete(int id)
         {
             var firstOrDefault = Items.FirstOrDefault(x => x.Id == id);
             if (firstOrDefault != null)
+            {
                 Items.Remove(firstOrDefault);
+                Save();
+            }
+            
         }
 
         public void Save()
@@ -51,7 +61,7 @@ namespace Service.Context
 
         static SiteRepository()
         {
-            Items.Add(new Site {Id = 0, Name = "lenta.ru"});
+            Items = ApiDbContext.Instance.Sites;
         }
 
     }
