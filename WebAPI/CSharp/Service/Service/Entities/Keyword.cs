@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using Newtonsoft.Json;
 
+
 namespace Service.Entities
 {
     [Serializable]
@@ -17,8 +18,8 @@ namespace Service.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
-        [ForeignKey("PersonId")]
-        public virtual Person PersonId { get; set; }
+
+        public int PersonID { get; set; }
 
     }
 }
