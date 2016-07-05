@@ -20,4 +20,5 @@ module StatisticsHelper
     Person.find_each.to_a
   end
 
+
 end
