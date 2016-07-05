@@ -1,0 +1,19 @@
+c:\users\elijah\documents\visual studio 2013\Projects\RSPUserApi\Domain\bin\Debug\Domain.dll.config
+c:\users\elijah\documents\visual studio 2013\Projects\RSPUserApi\Domain\bin\Debug\Domain.dll
+c:\users\elijah\documents\visual studio 2013\Projects\RSPUserApi\Domain\bin\Debug\Domain.pdb
+c:\users\elijah\documents\visual studio 2013\Projects\RSPUserApi\Domain\bin\Debug\EntityFramework.dll
+c:\users\elijah\documents\visual studio 2013\Projects\RSPUserApi\Domain\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\elijah\documents\visual studio 2013\Projects\RSPUserApi\Domain\bin\Debug\EntityFramework.xml
+c:\users\elijah\documents\visual studio 2013\Projects\RSPUserApi\Domain\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\elijah\documents\visual studio 2013\Projects\RSPUserApi\Domain\obj\Debug\Domain.dll
+c:\users\elijah\documents\visual studio 2013\Projects\RSPUserApi\Domain\obj\Debug\Domain.pdb
+c:\users\elijah\documents\visual studio 2013\Projects\RSPUserApi\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+D:\GitHub\RSP\WebAPI\CSharp\RSPUserApi\Domain\bin\Debug\Domain.dll.config
+D:\GitHub\RSP\WebAPI\CSharp\RSPUserApi\Domain\bin\Debug\Domain.dll
+D:\GitHub\RSP\WebAPI\CSharp\RSPUserApi\Domain\bin\Debug\Domain.pdb
+D:\GitHub\RSP\WebAPI\CSharp\RSPUserApi\Domain\bin\Debug\EntityFramework.dll
+D:\GitHub\RSP\WebAPI\CSharp\RSPUserApi\Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\GitHub\RSP\WebAPI\CSharp\RSPUserApi\Domain\bin\Debug\EntityFramework.xml
+D:\GitHub\RSP\WebAPI\CSharp\RSPUserApi\Domain\bin\Debug\EntityFramework.SqlServer.xml
+D:\GitHub\RSP\WebAPI\CSharp\RSPUserApi\Domain\obj\Debug\Domain.dll
+D:\GitHub\RSP\WebAPI\CSharp\RSPUserApi\Domain\obj\Debug\Domain.pdb

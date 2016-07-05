@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http.Tracing;
@@ -11,7 +12,7 @@ namespace Service.Context
     public class KeywordRepository : IRepository<Keyword>, IDisposable
     {
 
-        private static List<Keyword> Items = new List<Keyword>(); 
+        private static DbSet<Keyword> Items;
 
 
 
@@ -26,26 +27,36 @@ namespace Service.Context
         }
        public void Create(Keyword item)
        {
-           item.Id = Items.Count;
+           item.Id = Items.Count();
            Items.Add(item);
+           Save();
        }
 
         public void Update(Keyword item)
         {
             var firstOrDefault = Items.FirstOrDefault(x=>x.Id == item.Id);
             if (firstOrDefault != null)
-                Items[firstOrDefault.Id] = item;
+            {
+                Items.Attach(firstOrDefault);
+                Save();
+            }
         }
 
         public void Delete(int id)
         {
             var firstOrDefault = Items.FirstOrDefault(x => x.Id == id);
             if (firstOrDefault != null)
+            {
                 Items.Remove(firstOrDefault);
+                Save();
+
+            }
+                
         }
 
-        public void Save()
+        public  void Save()
         {
+            ApiDbContext.Instance.SaveChanges();
         }
 
         public void Dispose()
@@ -54,7 +65,7 @@ namespace Service.Context
 
         static KeywordRepository()
         {
-            Items.Add(new Keyword { Id = 0, Name = "Putin", PersonId = new Entities.Person { Id = 0, Name = "Putin" } });
+            Items = ApiDbContext.Instance.Keywords;
         }
     }
 }
