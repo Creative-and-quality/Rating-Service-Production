@@ -2,14 +2,10 @@ class GeneralStatisticsController < ApplicationController
   def index
     @sites     = sites_option_list
     @last_site = last_option_site
-    @persons   = Person.find_each if @last_site
+    @persons   = persons_option_list if @last_site
   end
 
   private
-
-  def option_site_id_params
-    params.require(:option_site_id).to_i
-  end
 
   def sites_option_list
     all_site_parametr = Site.new(name: 'Все', id: 0)
@@ -17,11 +13,15 @@ class GeneralStatisticsController < ApplicationController
   end
 
   def last_option_site
-    if params[:option_site_id] && option_site_id_params.zero?
+    if params[:option_site_id] && statistics_params(:option_site_id).zero?
       @sites.last
     elsif params[:option_site_id]
-      Site.find(option_site_id_params)
+      Site.find statistics_params(:option_site_id)
     end
+  end
+
+  def statistics_params(*name_options)
+    params.require(*name_options).to_i
   end
 
 end
