@@ -1,0 +1,21 @@
+<% if @last_site %>
+
+
+<table class="table table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Имя персоны</th><th>Кол-во упоменаний на сайте</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% persons_table(@persons, @last_site.id).each_pair do |name, rank| %>
+    <tr>
+      <td><%= name %></td><td><%= rank %></td>
+    </tr>
+
+    <%end%>
+
+  </tbody>
+</table>
+
+<% end %>

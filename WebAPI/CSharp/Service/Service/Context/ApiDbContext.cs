@@ -31,7 +31,7 @@ namespace Service.Context
 
         public DbSet<Keyword> Keywords { get; set; }
 
-        public DbSet<Entities.Person> Persons { get; set; }
+        public DbSet<Person> Persons { get; set; }
 
         public DbSet<Site> Sites { get; set; }
 

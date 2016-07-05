@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyString
+  last_scan_date: 2016-06-25
+  site_id: 
+
+two:
+  url: MyString
+  last_scan_date: 2016-06-25
+  site_id: 

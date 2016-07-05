@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using Service.Entities;
@@ -9,7 +10,7 @@ namespace Service.Context
 {
     public class PersonRepository 
     {
-        private static List<Person> Items = new List<Person>();
+        private static DbSet<Person> Items;
 
 
         public IEnumerable<Person> GetList()
@@ -23,26 +24,36 @@ namespace Service.Context
         }
         public void Create(Person item)
         {
-            item.Id = Items.Count;
+            item.Id = Items.Count();
             Items.Add(item);
+            Save();
         }
 
         public void Update(Person item)
         {
             var firstOrDefault = Items.FirstOrDefault(x => x.Id == item.Id);
             if (firstOrDefault != null)
-                Items[firstOrDefault.Id] = item;
+            {
+                Items.Attach(firstOrDefault);
+                Save();
+            }
+
         }
 
         public void Delete(int id)
         {
             var firstOrDefault = Items.FirstOrDefault(x => x.Id == id);
             if (firstOrDefault != null)
+            {
                 Items.Remove(firstOrDefault);
+                Save();
+            }
+            
         }
 
         public void Save()
         {
+            ApiDbContext.Instance.SaveChanges();
         }
 
         public void Dispose()
@@ -51,7 +62,7 @@ namespace Service.Context
 
         static PersonRepository()
         {
-            Items.Add(new Person {Id = 0, Name = "Putin"});
+            Items = ApiDbContext.Instance.Persons;
         }
 
     }
