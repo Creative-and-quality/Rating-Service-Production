@@ -5,10 +5,10 @@ module GeneralStatisticsHelper
       table[person.name] = summ_general_rank_on_site(person, site_id)
     end
 
-    sort_table(table)
+    sort_table_by_rank(table)
   end
 
-  def sort_table(table, max_to_min: 1)
+  def sort_table_by_rank(table, max_to_min: 1)
 
     sort_table = table.invert
     sort_table =
