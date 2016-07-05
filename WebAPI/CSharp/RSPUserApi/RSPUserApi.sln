@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSPUserApi", "RSPUserApi\RSPUserApi.csproj", "{973C73AA-F066-4AE9-BBE2-DE3C224BE692}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{19C8AA4C-9266-41A1-9EC8-6DC255DF06D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{0E9F4FC7-8D67-418C-B4E5-54A4EBE940EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{973C73AA-F066-4AE9-BBE2-DE3C224BE692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{973C73AA-F066-4AE9-BBE2-DE3C224BE692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{973C73AA-F066-4AE9-BBE2-DE3C224BE692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{973C73AA-F066-4AE9-BBE2-DE3C224BE692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19C8AA4C-9266-41A1-9EC8-6DC255DF06D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19C8AA4C-9266-41A1-9EC8-6DC255DF06D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19C8AA4C-9266-41A1-9EC8-6DC255DF06D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19C8AA4C-9266-41A1-9EC8-6DC255DF06D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E9F4FC7-8D67-418C-B4E5-54A4EBE940EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E9F4FC7-8D67-418C-B4E5-54A4EBE940EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E9F4FC7-8D67-418C-B4E5-54A4EBE940EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E9F4FC7-8D67-418C-B4E5-54A4EBE940EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

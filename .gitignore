@@ -14,3 +14,19 @@
 # Ignore Spring files.
 /web_ui/ruby/spring/*.pid
 
+.idea
+*.iml
+diff.xml
+gradle.run.settings.xml
+ide.general.xml
+markdown.xml
+inspection
+/debugger.xml
+/github_settings.xml
+/ignore.xml
+/IntelliLang.xml
+/ui.lnf.xml
+/web-browsers.xml
+/_windows/
+*.iml
+*.class
