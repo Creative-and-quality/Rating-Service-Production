@@ -2,14 +2,12 @@
   <%= render 'shared/left_menu' %>
   <div class="col-md-8 col-md-offset-1">
     <h1>Общая статистика</h1>
-    <form action= '/general_statistics'>
-      <a href="#">Сайт</a>
-      <select name="option_site_id" required><option> <%= @last_site.name if @last_site %> </option>
-        <% @sites.each do |site| %>
-        <option value= "<%= site.id %>" > <%= site.name%> </option>
-        <% end %>
-        <input type="submit" value="Отправить">
-    </form>
+
+    <%= form_tag("/general_statistics", method: "get", class: 'filter_form') do %>
+    <%= label_tag(:option_site_id, "Сайт") %>
+      <%= select_tag :option_site_id, options_for_select(options_for_select_site) %>
+      <%= submit_tag("Применить") %>
+    <% end %>
 
     <%= render 'shared/persons_table' %>
   </div>
