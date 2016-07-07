@@ -7,15 +7,5 @@ class Page < ActiveRecord::Base
   validates(:url, presence: true)
   validates(:site, presence: true)
 
-  def url
-    self.Url
-  end
-
-  def site
-    Site.find site_id
-  end
-
-  def site_id
-    self.SiteID
-  end
+  include Models::ColumnMethodsMysql
 end

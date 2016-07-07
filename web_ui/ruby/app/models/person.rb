@@ -12,14 +12,7 @@ class Person < ActiveRecord::Base
     WHERE  SiteID = :site_id"
     person_page_rank.where("PageID IN (#{page_ids})", site_id: site_id)
   end
-
-  def name
-    self.Name
-  end
-  #
-  # def person_page_rank
-  #   PersonPageRank.where(PersonID: id)
-  #
-  # end
+  
+  include Models::ColumnMethodsMysql
 
 end

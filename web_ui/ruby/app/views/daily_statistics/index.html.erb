@@ -2,6 +2,40 @@
   <%= render 'shared/left_menu' %>
   <div class="col-md-8 col-md-offset-1">
     <h1>Ежедневная статистика</h1>
-  
+    <%= form_tag("/daily_statistics", method: "get", class: 'filter_form') do %>
+    <table class='table_form'>
+      <tbody>
+        <tr>
+          <td>
+            <%= label_tag(:option_site_id, "Сайт") %>
+          </td>
+          <td>
+            <%= select_tag :option_site_id, options_for_select(options_for_select_models(@sites, @last_site)) %>
+          </td>
+          <td>
+            <%= label_tag(:option_site_id, "Начальная Дата") %>
+          </td>
+          <td>
+            <%= date_select(:date, :start, use_two_digit_numbers: true) %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= label_tag(:option_site_id, "Личность") %>
+          </td>
+          <td>
+            <%= select_tag :option_person_id, options_for_select(options_for_select_models(@persons, @last_person)) %>
+          </td>
+          <td>
+            <%= label_tag(:option_site_id, "Конечная Дата") %>
+          </td>
+          <td>
+            <%= date_select(:date, :start, use_two_digit_numbers: true) %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <%= submit_tag("Применить") %>
+    <% end %>
   </div>
 </div>

@@ -10,9 +10,8 @@ class Site < ActiveRecord::Base
   validates(:name, presence: true)
   validates(:page_url, presence: true)
 
-  def name
-    self.Name
-  end
+  include Models::ColumnMethodsMysql
+
   private
 
   def add_page

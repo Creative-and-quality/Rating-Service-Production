@@ -5,7 +5,7 @@
 
     <%= form_tag("/general_statistics", method: "get", class: 'filter_form') do %>
     <%= label_tag(:option_site_id, "Сайт") %>
-      <%= select_tag :option_site_id, options_for_select(options_for_select_site) %>
+    <%= select_tag :option_site_id, options_for_select(options_for_select_models(@sites, @last_site)) %>
       <%= submit_tag("Применить") %>
     <% end %>
 

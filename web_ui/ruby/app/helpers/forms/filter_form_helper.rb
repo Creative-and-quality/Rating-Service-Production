@@ -1,18 +1,19 @@
 module Forms::FilterFormHelper
-  def options_for_select_site
-    sites_option_list_for_select = {}
-    
-    if @last_site
-      sites_option_list_for_select[@last_site.name] = @last_site.id
+  def options_for_select_models(models, last_model)
+    option_list_for_select = {}
+
+    if last_model
+      option_list_for_select[last_model.name] = last_model.id
     else
-      sites_option_list_for_select[''] = ''
+      option_list_for_select[''] = ''
     end
 
-    @sites.each do |site|
-      sites_option_list_for_select[site.name] = site.id
+    models.each do |model|
+      option_list_for_select[model.name] = model.id
     end
-    sites_option_list_for_select.to_a
 
+    option_list_for_select.to_a
   end
+
 
 end
