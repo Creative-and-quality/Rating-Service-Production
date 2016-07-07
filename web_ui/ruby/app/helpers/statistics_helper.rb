@@ -1,7 +1,11 @@
 module StatisticsHelper
 
-  def statistics_params(*name_options)
-    params.require(*name_options)
+  def site_id_params
+    params.require(:option_site_id).to_i unless params[:option_site_id].blank?
+  end
+
+  def person_id_params
+    params.require(:option_person_id).to_i unless params[:option_person_id].blank?
   end
 
   def sites_option_list
@@ -9,11 +13,11 @@ module StatisticsHelper
   end
 
   def last_option_site
-    Site.find statistics_params(:option_site_id)
+    Site.find site_id_params if site_id_params
   end
 
   def last_option_person
-    Person.find statistics_params(:option_person_id)
+    Person.find person_id_params if person_id_params
   end
 
   def persons_option_list

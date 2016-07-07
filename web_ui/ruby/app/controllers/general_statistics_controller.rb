@@ -14,15 +14,12 @@ class GeneralStatisticsController < ApplicationController
   end
 
   def last_option_site
-    if params[:option_site_id] && statistics_params(:option_site_id).zero?
+    if site_id_params && site_id_params.zero?
       @sites.last
-    elsif params[:option_site_id]
-      Site.find statistics_params(:option_site_id)
+    else
+      Site.find site_id_params if site_id_params
     end
   end
 
-  def statistics_params(*name_options)
-    params.require(*name_options).to_i
-  end
 
 end
