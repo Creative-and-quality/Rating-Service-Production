@@ -1,5 +1,7 @@
 class Site < ActiveRecord::Base
-  has_many(:page)
+  self.table_name = "Sites"
+
+  has_many :page, dependent: :destroy, foreign_key: 'SiteID'
 
   attr_accessor :page_url
 
@@ -8,11 +10,14 @@ class Site < ActiveRecord::Base
   validates(:name, presence: true)
   validates(:page_url, presence: true)
 
+  def name
+    self.Name
+  end
   private
 
   def add_page
-    self.page.create url: page_url
-
+    self.page.create Url: page_url
   end
+
 
 end

@@ -9,8 +9,8 @@ persons = {
 }
 
 persons.each_pair do |name, keywords|
-  person = Person.create(name: name)
-  keywords.each { |keyword| person.keyword.create(name: keyword) }
+  person = Person.create(Name: name)
+  keywords.each { |keyword| person.keyword.create(Name: keyword) }
 
 end
 
@@ -22,16 +22,16 @@ sites.each do |site_name|
   persons = Person.all
 
   # Using callback after_save!!! becouse not using create.
-  site = Site.new(name: site_name, page_url: site_name)
+  site = Site.new(Name: site_name, page_url: site_name)
   site.save
 
   300.times do
     new_page_url = site.page_url + '/' + page_number.to_s
-    page = site.page.create(url: new_page_url, found_date_time: time)
+    page = site.page.create(Url: new_page_url, FoundDateTime: time)
 
     random_person_id = persons.sample.id
     rank_on_page = rand(20) + 1
-    page.person_page_rank.create(person_id: random_person_id, rank: rank_on_page)
+    page.person_page_rank.create!(PersonID: random_person_id, Rank: rank_on_page)
 
     page_number += 1
     time = time.tomorrow

@@ -12,7 +12,7 @@ class GeneralStatisticsController < ApplicationController
   end
 
   def sites_option_list
-    all_site_parametr = Site.new(name: 'Все', id: 0)
+    all_site_parametr = Site.new(Name: 'Все', id: 0)
     Site.find_each.to_a.push(all_site_parametr)
   end
 
