@@ -43,3 +43,5 @@ C:\Rating-Service-Production\WebAPI\CSharp\Service\Service\bin\System.Web.Http.W
 C:\Rating-Service-Production\WebAPI\CSharp\Service\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 C:\Rating-Service-Production\WebAPI\CSharp\Service\Service\obj\Debug\Service.dll
 C:\Rating-Service-Production\WebAPI\CSharp\Service\Service\obj\Debug\Service.pdb
+C:\Rating-Service-Production\WebAPI\CSharp\Service\Service\bin\MySql.Data.dll
+C:\Rating-Service-Production\WebAPI\CSharp\Service\Service\bin\MySql.Data.Entity.EF6.dll

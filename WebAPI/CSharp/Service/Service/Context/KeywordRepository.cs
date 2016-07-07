@@ -7,14 +7,13 @@ using System.Web.Http.Tracing;
 using Service.Entities;
 using Service.Interfaces;
 
+
 namespace Service.Context
 {
     public class KeywordRepository : IRepository<Keyword>, IDisposable
     {
 
         private static DbSet<Keyword> Items;
-
-
 
         public IEnumerable<Keyword> GetList()
         {
