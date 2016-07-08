@@ -16,7 +16,7 @@
             <%= label_tag(:option_site_id, "Начальная Дата") %>
           </td>
           <td>
-            <%= date_select(:date, :start, use_two_digit_numbers: true) %>
+            <%= date_select(:date, :start, use_two_digit_numbers: true, selected: @date_range.first) %>
           </td>
         </tr>
         <tr>
@@ -30,12 +30,14 @@
             <%= label_tag(:option_site_id, "Конечная Дата") %>
           </td>
           <td>
-            <%= date_select(:date, :start, use_two_digit_numbers: true) %>
+            <%= date_select(:date, :finish, use_two_digit_numbers: true, selected: @date_range.last) %>
           </td>
         </tr>
       </tbody>
     </table>
     <%= submit_tag("Применить") %>
     <% end %>
+
+    <%= render 'shared/count_page_table' %>
   </div>
 </div>

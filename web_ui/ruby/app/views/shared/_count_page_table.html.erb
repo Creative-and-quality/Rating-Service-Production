@@ -1,0 +1,21 @@
+<% if @last_person %>
+
+
+<table class="table table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Дата</th><th>Кол-во новых страниц <%= print_date_range(@date_range) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% count_page_on_date_and_site(@last_person, @last_site, @date_range).each_pair do |date, count| %>
+    <tr>
+      <td><%= date %></td><td><%= count %></td>
+    </tr>
+
+    <%end%>
+
+  </tbody>
+</table>
+
+<% end %>

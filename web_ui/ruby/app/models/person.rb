@@ -15,13 +15,15 @@ class Person < ActiveRecord::Base
     person_page_rank.where("PageID IN (#{page_ids})", site_id: site_id)
   end
 
+  def page_in_time_range(time_range)
+    pages.where(FoundDateTime: time_range)
+  end
+
   def pages
     page_ids = "SELECT PageID FROM PersonPageRanks
     WHERE  PersonID = :person_id"
     Page.where("id IN (#{page_ids})", person_id: id)
-
   end
-
 
 
 

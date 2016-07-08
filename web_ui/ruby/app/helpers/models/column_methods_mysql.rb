@@ -35,5 +35,9 @@ module Models::ColumnMethodsMysql
     self.Name
   end
 
+  def found_date
+    self.FoundDateTime
+  end
+
 
 end
