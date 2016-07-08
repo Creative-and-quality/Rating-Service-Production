@@ -7,12 +7,22 @@ class Person < ActiveRecord::Base
 
   validates(:Name, presence: true)
 
+  include Models::ColumnMethodsMysql
+
   def general_rank_pages_on_site(site_id)
     page_ids = "SELECT id FROM Pages
     WHERE  SiteID = :site_id"
     person_page_rank.where("PageID IN (#{page_ids})", site_id: site_id)
   end
-  
-  include Models::ColumnMethodsMysql
+
+  def pages
+    page_ids = "SELECT PageID FROM PersonPageRanks
+    WHERE  PersonID = :person_id"
+    Page.where("id IN (#{page_ids})", person_id: id)
+
+  end
+
+
+
 
 end
