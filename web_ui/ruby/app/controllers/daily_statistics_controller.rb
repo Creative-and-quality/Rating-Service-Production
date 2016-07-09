@@ -8,6 +8,11 @@ class DailyStatisticsController < ApplicationController
     @date_range  = date_rang_params
 
     flash[:error] = error_list_emty_params(option_site_id: 'Вы не выбрали сайт', option_person_id: 'Вы не выбрали имя персоны')
+    if @date_range && @date_range.last < @date_range.first
+      flash[:error] ||= []
+      flash[:error] << "Выбран неверный интервал дат"
+    end
+
   end
 
 
