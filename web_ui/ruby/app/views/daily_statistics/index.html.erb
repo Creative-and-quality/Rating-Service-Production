@@ -1,6 +1,7 @@
 <div class="row">
   <%= render 'shared/left_menu' %>
   <div class="col-md-8 col-md-offset-1">
+    <%= render 'shared/error_message' %>
     <h1>Ежедневная статистика</h1>
     <%= form_tag("/daily_statistics", method: "get", class: 'filter_form') do %>
     <table class='table_form'>

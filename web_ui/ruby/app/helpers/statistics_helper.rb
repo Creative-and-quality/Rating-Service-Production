@@ -46,5 +46,17 @@ module StatisticsHelper
     Person.find_each.to_a
   end
 
+  def error_list_emty_params(hash_error_message)
+    result = nil
+
+    hash_error_message.each_pair do |param, message|
+      if params[param]  && params[param].blank?
+        result ||= []
+        result << message
+      end
+    end
+    result
+  end
+
 
 end
