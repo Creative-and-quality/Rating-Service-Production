@@ -1,7 +1,7 @@
 <% if @last_site %>
 
 
-<table class="table table-bordered table-hover table-striped">
+<table class="table table-bordered table-hover table-striped" id="persons_rank">
   <thead>
     <tr>
       <th>Имя персоны</th><th>Кол-во упоменаний на сайте</th>
@@ -10,7 +10,7 @@
   <tbody>
     <% persons_table(@persons, @last_site.id).each_pair do |name, rank| %>
     <tr>
-      <td><%= name %></td><td><%= rank %></td>
+      <td name="person"><%= name %></td><td name="rank"><%= rank %></td>
     </tr>
 
     <%end%>
