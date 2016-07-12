@@ -1,0 +1,2 @@
+module Api::KeywordHelper
+end
