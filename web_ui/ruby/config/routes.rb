@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :daily_statistics, only: [:index]
 
   namespace :api do
-  resources :keyword, only: [:show, :destroy]
+  resources :keyword, only: [:show, :destroy, :update]
 end
   # resources :persons, only: [:create, :show, :index]
 end
