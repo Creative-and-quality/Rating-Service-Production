@@ -1,7 +1,6 @@
-class Api::KeywordController < ApplicationController
-  skip_before_filter :verify_authenticity_token
-  before_action :keyword_params_validation, only: [:update, :create]
-  before_action :secret_key_validation
+class Api::KeywordController < Api::ApplicationController
+  # если нужно обойти авторизацию сессии в куках, можно использовать:
+  # skip_before_filter :verify_authenticity_token
 
   def index
     @keywords = Keyword.all
@@ -51,38 +50,4 @@ class Api::KeywordController < ApplicationController
     end
   end
 
-
-  private
-
-  def response_ok
-    {status: 'OK'}
-  end
-
-  def response_not_found
-    {error: 'not_found'}
-  end
-
-  def response_error_db
-    {error: 'could not write to the database'}
-  end
-
-  def response_error_auth
-    {error: 'authentication error'}
-  end
-
-  def keyword_params_validation
-    if params['Name'] && !params['Name'].blank?
-      @keyword_params = params.permit(:Name)
-    else
-      render :json => {error: '500 bad request'}
-    end
-  end
-
-  def secret_key_validation
-    secret_key = RspWeb::Application.config.rsp_web_api_key['api_key_geekbrains']
-    unless params[:app_key] == secret_key
-      render :json => response_error_auth
-    end
-
-  end
 end

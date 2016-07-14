@@ -5,7 +5,7 @@ class Person < ActiveRecord::Base
   has_many :keyword,          dependent: :destroy, foreign_key: 'PersonID'
   has_many :person_page_rank, dependent: :destroy, foreign_key: 'PersonID'
 
-  validates(:Name, presence: true)
+  validates :Name, presence: true, length: { maximum: 50 }
 
   include Models::ColumnMethodsMysql
 
