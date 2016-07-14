@@ -1,10 +1,10 @@
 class Keyword < ActiveRecord::Base
+  include Models::ColumnMethodsMysql
   self.table_name = "Keywords"
-  validates  :Name, presence: true, length: { maximum: 50 }
-  
+
   belongs_to :person, primary_key: 'PersonID'
 
-  include Models::ColumnMethodsMysql
+  validates  :Name, presence: true, length: { maximum: 50 }
 
 
 end

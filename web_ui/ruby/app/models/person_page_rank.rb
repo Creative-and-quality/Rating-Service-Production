@@ -1,4 +1,5 @@
 class PersonPageRank < ActiveRecord::Base
+  include Models::ColumnMethodsMysql
   self.table_name  = "PersonPageRanks"
   self.primary_key = 'PageID'
 
@@ -8,6 +9,5 @@ class PersonPageRank < ActiveRecord::Base
   validates(:person, :page, presence: true)
   validates(:rank, presence: true)
 
-  include Models::ColumnMethodsMysql
 
 end

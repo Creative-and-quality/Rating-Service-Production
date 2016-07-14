@@ -1,16 +1,15 @@
 class Site < ActiveRecord::Base
+  include Models::ColumnMethodsMysql
   self.table_name = "Sites"
-
-  has_many :page, dependent: :destroy, foreign_key: 'SiteID'
 
   attr_accessor :page_url
 
-  after_save :add_page
+  has_many :page, dependent: :destroy, foreign_key: 'SiteID'
 
   validates(:name, presence: true)
   validates(:page_url, presence: true)
 
-  include Models::ColumnMethodsMysql
+  after_save :add_page
 
   private
 

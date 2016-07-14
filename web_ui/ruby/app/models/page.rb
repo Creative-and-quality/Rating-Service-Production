@@ -1,4 +1,5 @@
 class Page < ActiveRecord::Base
+  include Models::ColumnMethodsMysql
   self.table_name = "Pages"
 
   default_scope -> { order(FoundDateTime: :asc) }
@@ -9,5 +10,4 @@ class Page < ActiveRecord::Base
   validates(:url, presence: true)
   validates(:site, presence: true)
 
-  include Models::ColumnMethodsMysql
 end
