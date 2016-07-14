@@ -9,12 +9,12 @@ class Site < ActiveRecord::Base
   validates(:name, presence: true)
   validates(:page_url, presence: true)
 
-  after_save :add_page
+  after_save :after_save_add_page
 
   private
 
-  def add_page
-    self.page.create Url: page_url
+  def after_save_add_page
+    Page.create(Url: page_url, SiteID: id)
   end
 
 

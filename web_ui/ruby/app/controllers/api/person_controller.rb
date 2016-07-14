@@ -44,6 +44,6 @@ class Api::PersonController < Api::ApplicationController
     else
       render :json => response_not_found
     end
-
   end
+  
 end

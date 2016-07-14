@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :keyword, only: [:show, :destroy, :update, :index]
-
+    resources :site, only: [:show, :destroy, :update, :index, :create]
+    
     resources :person, only: [:show, :destroy, :update, :index, :create] do
       resources :keyword, only: [:create]
     end
