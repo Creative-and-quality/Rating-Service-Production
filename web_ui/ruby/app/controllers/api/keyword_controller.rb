@@ -18,14 +18,18 @@ class Api::KeywordController < Api::ApplicationController
   end
 
   def create
-    # {"name":"Путиным","controller":"api/keyword","action":"create","person_id":"1"}
     @person = Person.find_by(id: params['person_id'])
 
     if @person
-      @keyword = @person.keyword.create(Name: params['Name'])
-      render :json => @keyword
+      @keyword = @person.keyword.new(Name: params['Name'])
     else
       render :json => response_not_found
+    end
+
+    if @keyword.save
+      render :json => @keyword
+    else
+      render :json => @keyword.errors
     end
 
   end
