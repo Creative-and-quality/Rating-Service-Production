@@ -8,6 +8,7 @@ public class StartCrawler {
     public static void main(String[] args) throws IOException {
         ArrayList<String> sites = db.ForCrawler.getSites();
         System.out.println("CRAWLER v. 0.1 rev. 0.2");
+		System.out.println("Copyright Creative-and-quality.");
         System.out.println("Authors: Dmitriy Gurov & Dmitriy Zhuchkov.");
 
         for (String urlFromDB : sites) {
