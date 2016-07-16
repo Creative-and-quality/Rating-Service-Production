@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to general_statistics_path
 
     else
-      flash[:error] = ['Ошибка авторизации'] # Not quite right!
+      flash[:danger] = 'Ошибка авторизации' # Not quite right!
       render 'new'
     end
   end
