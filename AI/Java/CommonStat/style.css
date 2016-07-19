@@ -1,0 +1,16 @@
+.background {
+    -fx-background-color: #584DB5;
+}
+.letter {
+    -fx-text-fill: white;
+}
+.button {
+    -fx-background-color: #01B169;
+	-fx-background-radius: 30;
+	-fx-text-fill: white;
+   }
+.button: hover {
+    -fx-background-color: #01F895;
+	-fx-background-radius: 30;
+	-fx-text-fill: white;
+   }

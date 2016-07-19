@@ -35,8 +35,25 @@ module Models::ColumnMethodsMysql
     self.Name
   end
 
+  def login
+    self.Login
+  end
+
+  def login=(value)
+    self.Login = value
+  end
+
+  def password_digest
+    self.Password
+  end
+
   def found_date
     self.FoundDateTime
+  end
+
+  def password_digest=(value)
+    self.Password = value
+
   end
 
 
